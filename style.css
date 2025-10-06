@@ -1,0 +1,324 @@
+:root{
+  --bg: #0b0f14;
+  --panel: #0f1720;
+  --muted: #9aa7b0;
+  --accent: #00b3ff;
+  --accent-2: #6a6dff;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --radius: 12px;
+  --max-width: 1100px;
+  --fw: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--fw);
+  background:linear-gradient(180deg,var(--bg),#020305 55%);
+  color:#dbe7ee;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{max-width:var(--max-width);margin:0 auto;padding:24px}
+
+/* NAV */
+.nav-wrap{backdrop-filter:blur(6px);position:sticky;top:0;z-index:60}
+.nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.logo-dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(45deg,var(--accent),var(--accent-2));box-shadow:0 0 18px rgba(0,179,255,0.2)}
+.brand-text{font-weight:700;letter-spacing:0.4px}
+
+.nav-links{display:flex;gap:12px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+.nav-links a:hover{color:#fff;background:var(--glass)}
+
+.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001; padding:8px 12px;border-radius:10px;font-weight:700}
+
+/* nav toggle for small screens */
+.nav-toggle{display:none;background:none;border:0;cursor:pointer}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--muted);margin:4px 0;border-radius:2px}
+
+/* HERO */
+.hero{padding:48px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:30px;align-items:start}
+.hero-left h1{font-size:36px;margin:4px 0 10px}
+.tagline{font-style:normal;color:#bfefff;font-weight:600;line-height:1.4}
+.desc{color:var(--muted);margin-top:16px}
+.hero-actions{margin-top:18px;display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dbe7ee}
+
+/* skills */
+.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin-top:18px;list-style:none}
+.skills li{background:var(--glass);padding:6px 10px;border-radius:8px;color:var(--muted);font-weight:600}
+
+/* right column cards */
+.card{background:linear-gradient(180deg,var(--panel),#0d1114);padding:18px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03);margin-bottom:18px}
+.profile-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+.avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 30px rgba(106,109,255,0.12);margin-bottom:12px}
+.card-stats{display:flex;gap:10px;margin-top:10px;width:100%;justify-content:space-between}
+.card-stats div{font-size:13px;color:var(--muted)}
+.socials{display:flex;gap:10px;margin-top:12px}
+.socials a{color:var(--muted);text-decoration:none;font-weight:700}
+
+/* features */
+.features{padding:36px 0}
+.features h2{margin-bottom:16px;font-size:22px}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feature{background:var(--glass-2);padding:18px;border-radius:12px}
+.feature h3{margin:0 0 8px}
+
+/* footer */
+.footer{padding:26px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:20px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.footer a{color:var(--muted);text-decoration:none;margin-left:10px}
+
+/* responsive */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none;position:absolute;right:24px;top:64px;background:var(--panel);padding:12px;border-radius:10px;flex-direction:column;width:180px}
+  .nav-toggle{display:block}
+}
+@media (max-width:560px){
+  .feature-grid{grid-template-columns:1fr}
+  .brand-text{display:none}
+  .hero-left h1{font-size:28px}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+}
+/* Source Codes Grid */
+.code-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  margin-top:24px;
+}
+
+.code-card{
+  background:linear-gradient(180deg,var(--panel),#0d1114);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.code-card h3{margin-top:0;margin-bottom:8px;color:var(--accent)}
+.code-card p{margin:6px 0;color:var(--muted)}
+.code-card .btn{margin-top:10px;display:inline-block}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnshumanCodes — Notes Library</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="dark">
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="logo-dot"></span>
+        <span class="brand-text">AnshumanCodes</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="source-codes.html">Source Codes</a>
+        <a href="notes.html">Notes Library</a>
+        <a href="news.html">Recent News</a>
+        <a href="readers-club.html">Readers Club</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NOTES LIBRARY SECTION -->
+  <main>
+    <section class="notes container">
+      <h1>Handwritten Notes — Class 11 ISC</h1>
+      <p class="desc">Download or view my handwritten notes for each subject. Updated regularly with new chapters.</p>
+
+      <!-- SUBJECT CARDS -->
+      <div class="notes-grid">
+
+        <!-- English -->
+        <div class="note-card">
+          <h3>English</h3>
+          <ul>
+            <li><a href="assets/pdfs/English_Poetry_Ch1.pdf" download>Poetry — Chapter 1</a></li>
+            <li><a href="assets/pdfs/English_Prose_Ch1.pdf" download>Prose — Chapter 1</a></li>
+          </ul>
+        </div>
+
+        <!-- Artificial Intelligence -->
+        <div class="note-card">
+          <h3>Artificial Intelligence</h3>
+          <ul>
+            <li><a href="assets/pdfs/AI_Ch1.pdf" download>AI — Chapter 1</a></li>
+            <li><a href="assets/pdfs/AI_Ch2.pdf" download>AI — Chapter 2</a></li>
+          </ul>
+        </div>
+
+        <!-- Mathematics -->
+        <div class="note-card">
+          <h3>Mathematics</h3>
+          <ul>
+            <li><a href="assets/pdfs/Math_Ch1.pdf" download>Quadratic Equations — Chapter 1</a></li>
+            <li><a href="assets/pdfs/Math_Ch2.pdf" download>Relations & Functions — Chapter 2</a></li>
+          </ul>
+        </div>
+
+        <!-- Physics -->
+        <div class="note-card">
+          <h3>Physics</h3>
+          <ul>
+            <li><a href="assets/pdfs/Physics_Ch1.pdf" download>Some Basic Concepts of Chemistry — Chapter 1</a></li>
+            <li><a href="assets/pdfs/Physics_Ch2.pdf" download>Structure of Atom — Chapter 2</a></li>
+          </ul>
+        </div>
+
+        <!-- Chemistry -->
+        <div class="note-card">
+          <h3>Chemistry</h3>
+          <ul>
+            <li><a href="assets/pdfs/Chemistry_Ch1.pdf" download>Some Basic Concepts of Chemistry — Chapter 1</a></li>
+            <li><a href="assets/pdfs/Chemistry_Ch2.pdf" download>Structure of Atom — Chapter 2</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>AnshumanCodes</strong>
+        <p>© <span id="year"></span> Anshuman Singh — Built with ❤️</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+/* News Grid */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  margin-top:24px;
+}
+
+.news-card{
+  background:linear-gradient(180deg,var(--panel),#0d1114);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.news-card h3{margin-top:0;margin-bottom:8px;color:var(--accent)}
+.news-card p{margin:6px 0;color:var(--muted)}
+.news-card .btn{margin-top:10px;display:inline-block}
+
+/* Readers Club Grid */
+.readers-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  margin-top:24px;
+}
+
+.readers-card{
+  background:linear-gradient(180deg,var(--panel),#0d1114);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.readers-card h3{margin-top:0;margin-bottom:8px;color:var(--accent)}
+.readers-card p{margin:6px 0;color:var(--muted)}
+.readers-card .btn{margin-top:10px;display:inline-block}
+
+/* Contact Grid */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  margin-top:24px;
+}
+
+.contact-info, .contact-form{
+  background:linear-gradient(180deg,var(--panel),#0d1114);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.contact-info h3, .contact-form h3{color:var(--accent);margin-top:0}
+.contact-info p, .contact-form p{color:var(--muted)}
+
+.contact-form form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.contact-form input, .contact-form textarea{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;
+  padding:10px;
+  color:#fff;
+  font-size:1rem;
+  resize:none;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+  outline:none;
+  border-color:var(--accent);
+}
+
+.contact-form .btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:background 0.3s;
+}
+
+.contact-form .btn:hover{
+  background:var(--accent-2);
+}
+
+.form-status{
+  margin-top:10px;
+  font-weight:500;
+}
