@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnshumanCodes — Contact</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="dark">
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="logo-dot"></span>
+        <span class="brand-text">AnshumanCodes</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="source-codes.html">Source Codes</a>
+        <a href="notes.html">Notes Library</a>
+        <a href="news.html">Recent News</a>
+        <a href="readers-club.html">Readers Club</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <main>
+    <section class="contact container">
+      <h1>Contact Me</h1>
+      <p class="desc">Have questions, suggestions, or want to collaborate? Drop a message below!</p>
+
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info card">
+          <h3>Contact Info</h3>
+          <p><strong>Email:</strong>  as1699009.lkoo@gmail.com</p>
+          <p><strong>Instagram:</strong>  Insta Id - @anshuman._.developer1</p>
+          <p><strong>Location:</strong>  UP 32 - India</p>
+          <p>You can also reach me via Whatsapp or Instagram.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form card">
+          <h3>Send a Message</h3>
+          <form id="contactForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type your message..." required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+          <p id="formStatus" class="form-status"></p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>AnshumanCodes</strong>
+        <p>© <span id="year"></span> Anshuman Singh — Built with ❤️</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://youtube.com/@properstudies_official1?si=7Y7Px9zCXFdH4t44">YouTube</a>
+        <a href="https://whatsapp.com/channel/0029VbAg10d0VycIRcLiNK3i">Whatsapp</a>
+        <a href="https://www.instagram.com/anshuman._.developer1?igsh=dzBsNGdyeTNvdWk4" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Contact Form Handler (basic frontend simulation)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = "Thanks for your Message! I will get back to you soon.";
+      status.style.color = "#0f0";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
